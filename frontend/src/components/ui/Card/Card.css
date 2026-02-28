@@ -1,0 +1,65 @@
+/* ============================================
+   CARD COMPONENT — Edway Soft Shadow
+   ============================================ */
+
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+}
+
+/* ---- VARIANTS ---- */
+.card--default {
+    box-shadow: var(--shadow-card);
+}
+
+.card--bordered {
+    border: 1px solid var(--color-neutral-200);
+    box-shadow: none;
+}
+
+.card--elevated {
+    box-shadow: var(--shadow-lg);
+}
+
+/* ---- CLICKABLE ---- */
+.card--clickable {
+    cursor: pointer;
+}
+
+.card--clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ---- PADDING ---- */
+.card--pad-none {
+    padding: 0;
+}
+
+.card--pad-sm {
+    padding: var(--space-4);
+}
+
+.card--pad-md {
+    padding: var(--space-6);
+}
+
+.card--pad-lg {
+    padding: var(--space-8);
+}
+
+/* ---- SUB-COMPONENTS ---- */
+.card__header {
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+    margin-bottom: var(--space-4);
+}
+
+.card__body {}
+
+.card__footer {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-neutral-100);
+    margin-top: var(--space-4);
+}

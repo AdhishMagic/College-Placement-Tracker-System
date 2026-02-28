@@ -1,0 +1,181 @@
+/* ============================================
+   HOME PAGE — Edway-Inspired Landing
+   ============================================ */
+
+.home-page {
+    min-height: 100vh;
+    background-color: var(--color-white);
+}
+
+/* ---- NAVIGATION ---- */
+.home-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.home-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.home-nav__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.home-nav__logo-icon {
+    font-size: var(--text-2xl);
+}
+
+.home-nav__logo-text {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-neutral-900);
+}
+
+.home-nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* ---- HERO ---- */
+.home-hero {
+    padding-top: 160px;
+    padding-bottom: var(--space-20);
+    background: linear-gradient(180deg,
+            var(--color-white) 0%,
+            var(--color-primary-50) 100%);
+    position: relative;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(19, 62, 109, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.home-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-hero__content {
+    max-width: 740px;
+    margin-bottom: var(--space-16);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.home-hero__badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-pill);
+    margin-bottom: var(--space-6);
+}
+
+.home-hero__title {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-extrabold);
+    line-height: var(--leading-tight);
+    color: var(--color-neutral-900);
+    margin-bottom: var(--space-6);
+}
+
+.home-hero__title-accent {
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-hero__description {
+    font-size: var(--text-lg);
+    color: var(--color-neutral-500);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+.home-hero__cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+}
+
+/* ---- STATS GRID ---- */
+.home-hero__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    width: 100%;
+    max-width: 900px;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.home-hero__stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-6) var(--space-4);
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-base);
+}
+
+.home-hero__stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.home-hero__stat-value {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-700);
+}
+
+.home-hero__stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    margin-top: var(--space-1);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .home-hero {
+        padding-top: 120px;
+    }
+
+    .home-hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .home-hero__stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-hero__cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

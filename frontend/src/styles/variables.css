@@ -1,0 +1,183 @@
+/* ============================================
+   COLLEGE PLACEMENT TRACKER SYSTEM
+   Global Design Tokens — Edway-Inspired
+   ============================================ */
+
+:root {
+    /* ---- PRIMARY PALETTE ---- */
+    --color-primary-900: #0A243F;
+    --color-primary-800: #0F3156;
+    --color-primary-700: #133E6D;
+    --color-primary-600: #1A5291;
+    --color-primary-500: #2166B3;
+    --color-primary-400: #4A8AD4;
+    --color-primary-300: #7AADE0;
+    --color-primary-200: #AFCFED;
+    --color-primary-100: #D7E7F6;
+    --color-primary-50: #EBF3FA;
+
+    /* ---- NEUTRAL PALETTE ---- */
+    --color-neutral-950: #080808;
+    --color-neutral-900: #111111;
+    --color-neutral-800: #1E1E1E;
+    --color-neutral-700: #333333;
+    --color-neutral-600: #555555;
+    --color-neutral-500: #777777;
+    --color-neutral-400: #999999;
+    --color-neutral-300: #BBBBBB;
+    --color-neutral-200: #DDDDDD;
+    --color-neutral-100: #F0F0F0;
+    --color-neutral-50: #F8F8F8;
+    --color-white: #FFFFFF;
+
+    /* ---- SEMANTIC COLORS ---- */
+    --color-success-600: #16794A;
+    --color-success-500: #1EA35E;
+    --color-success-100: #D4F5E2;
+    --color-success-50: #EEFBF3;
+
+    --color-warning-600: #C27803;
+    --color-warning-500: #E89C0A;
+    --color-warning-100: #FFF0CC;
+    --color-warning-50: #FFFAED;
+
+    --color-danger-600: #C5303C;
+    --color-danger-500: #E1414D;
+    --color-danger-100: #FCE0E2;
+    --color-danger-50: #FEF5F5;
+
+    --color-info-600: #2563EB;
+    --color-info-500: #3B82F6;
+    --color-info-100: #DBEAFE;
+    --color-info-50: #EFF6FF;
+
+    /* ---- TYPOGRAPHY ---- */
+    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+    /* Font Sizes — using a modular scale */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-md: 1.125rem;
+    /* 18px */
+    --text-lg: 1.25rem;
+    /* 20px */
+    --text-xl: 1.5rem;
+    /* 24px */
+    --text-2xl: 1.875rem;
+    /* 30px */
+    --text-3xl: 2.25rem;
+    /* 36px */
+    --text-4xl: 3rem;
+    /* 48px */
+    --text-5xl: 3.75rem;
+    /* 60px */
+
+    /* Font Weights */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.2;
+    --leading-snug: 1.35;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.65;
+    --leading-loose: 1.8;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.025em;
+    --tracking-tight: -0.015em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+
+    /* ---- SPACING SYSTEM ---- */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+    --space-24: 6rem;
+    /* 96px */
+    --space-32: 8rem;
+    /* 128px */
+
+    /* ---- BORDER RADIUS ---- */
+    --radius-sm: 0.375rem;
+    /* 6px */
+    --radius-md: 0.5rem;
+    /* 8px */
+    --radius-lg: 0.75rem;
+    /* 12px */
+    --radius-xl: 1rem;
+    /* 16px */
+    --radius-2xl: 1.5rem;
+    /* 24px */
+    --radius-pill: 50px;
+    --radius-full: 9999px;
+
+    /* ---- SHADOWS — Soft Academic Aesthetic ---- */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 40px rgba(19, 62, 109, 0.15);
+    --shadow-card: 0 4px 40px rgba(0, 0, 0, 0.05);
+
+    /* ---- TRANSITIONS ---- */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+    --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ---- LAYOUT ---- */
+    --container-xs: 480px;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1200px;
+    --container-2xl: 1440px;
+
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 72px;
+    --header-height: 64px;
+
+    /* ---- Z-INDEX SYSTEM ---- */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-sidebar: 300;
+    --z-overlay: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-toast: 800;
+}
