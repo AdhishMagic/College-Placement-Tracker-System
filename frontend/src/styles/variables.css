@@ -1,6 +1,7 @@
 /* ============================================
    COLLEGE PLACEMENT TRACKER SYSTEM
    Global Design Tokens — Edway-Inspired
+   Light + Dark Theme Architecture
    ============================================ */
 
 :root {
@@ -50,6 +51,29 @@
     --color-info-500: #3B82F6;
     --color-info-100: #DBEAFE;
     --color-info-50: #EFF6FF;
+
+    /* ---- THEME-AWARE SURFACE TOKENS (Light Default) ---- */
+    --surface-primary: #FFFFFF;
+    --surface-secondary: #F8F8F8;
+    --surface-tertiary: #F0F0F0;
+    --surface-elevated: #FFFFFF;
+    --surface-overlay: rgba(0, 0, 0, 0.4);
+    --surface-sidebar: #FFFFFF;
+    --surface-header: rgba(255, 255, 255, 0.92);
+
+    --text-primary: #111111;
+    --text-secondary: #555555;
+    --text-tertiary: #999999;
+    --text-inverse: #FFFFFF;
+    --text-link: #1A5291;
+
+    --border-primary: #F0F0F0;
+    --border-secondary: #DDDDDD;
+    --border-focus: #4A8AD4;
+
+    --icon-primary: #555555;
+    --icon-secondary: #999999;
+    --icon-active: #1A5291;
 
     /* ---- TYPOGRAPHY ---- */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -152,12 +176,14 @@
     --shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.12);
     --shadow-glow: 0 0 40px rgba(19, 62, 109, 0.15);
     --shadow-card: 0 4px 40px rgba(0, 0, 0, 0.05);
+    --shadow-dropdown: 0 10px 38px -10px rgba(0, 0, 0, 0.15), 0 10px 20px -15px rgba(0, 0, 0, 0.1);
 
     /* ---- TRANSITIONS ---- */
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 400ms ease;
     --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-sidebar: 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
     /* ---- LAYOUT ---- */
     --container-xs: 480px;
@@ -167,9 +193,9 @@
     --container-xl: 1200px;
     --container-2xl: 1440px;
 
-    --sidebar-width: 260px;
-    --sidebar-collapsed-width: 72px;
-    --header-height: 64px;
+    --sidebar-width: 272px;
+    --sidebar-collapsed-width: 76px;
+    --header-height: 68px;
 
     /* ---- Z-INDEX SYSTEM ---- */
     --z-dropdown: 100;
@@ -180,4 +206,41 @@
     --z-popover: 600;
     --z-tooltip: 700;
     --z-toast: 800;
+}
+
+/* ============================================
+   DARK THEME OVERRIDES
+   ============================================ */
+[data-theme='dark'] {
+    --surface-primary: #0F1117;
+    --surface-secondary: #161922;
+    --surface-tertiary: #1E2130;
+    --surface-elevated: #1A1D2A;
+    --surface-overlay: rgba(0, 0, 0, 0.6);
+    --surface-sidebar: #111319;
+    --surface-header: rgba(15, 17, 23, 0.92);
+
+    --text-primary: #E8E9ED;
+    --text-secondary: #9CA0AE;
+    --text-tertiary: #636878;
+    --text-inverse: #111111;
+    --text-link: #7AADE0;
+
+    --border-primary: #252836;
+    --border-secondary: #33374A;
+    --border-focus: #4A8AD4;
+
+    --icon-primary: #9CA0AE;
+    --icon-secondary: #636878;
+    --icon-active: #7AADE0;
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.35);
+    --shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 40px rgba(74, 138, 212, 0.15);
+    --shadow-card: 0 4px 40px rgba(0, 0, 0, 0.2);
+    --shadow-dropdown: 0 10px 38px -10px rgba(0, 0, 0, 0.5), 0 10px 20px -15px rgba(0, 0, 0, 0.35);
 }

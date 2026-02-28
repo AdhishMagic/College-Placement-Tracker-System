@@ -20,6 +20,7 @@ const HomePage = lazy(() => import('../pages/public/HomePage'));
 const LoginPage = lazy(() => import('../pages/auth/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/auth/RegisterPage'));
 const ForgotPasswordPage = lazy(() => import('../pages/auth/ForgotPasswordPage'));
+const ResetPasswordPage = lazy(() => import('../pages/auth/ResetPasswordPage'));
 const NotFoundPage = lazy(() => import('../pages/public/NotFoundPage'));
 
 // Admin Dashboard
@@ -114,6 +115,14 @@ const router = createBrowserRouter([
                         element: (
                             <SuspenseWrapper>
                                 <ForgotPasswordPage />
+                            </SuspenseWrapper>
+                        ),
+                    },
+                    {
+                        path: 'reset-password',
+                        element: (
+                            <SuspenseWrapper>
+                                <ResetPasswordPage />
                             </SuspenseWrapper>
                         ),
                     },

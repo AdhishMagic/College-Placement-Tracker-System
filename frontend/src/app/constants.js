@@ -55,6 +55,7 @@ export const API_ENDPOINTS = Object.freeze({
     ADMIN_USERS: '/admin/users',
     ADMIN_SETTINGS: '/admin/settings',
     ADMIN_REPORTS: '/admin/reports',
+    ADMIN_AUDIT_LOGS: '/admin/audit-logs',
 
     // Notifications
     NOTIFICATIONS: '/notifications',
@@ -81,16 +82,20 @@ export const ROUTE_PATHS = Object.freeze({
     ADMIN_RECRUITERS: '/dashboard/admin/recruiters',
     ADMIN_COMPANIES: '/dashboard/admin/companies',
     ADMIN_JOBS: '/dashboard/admin/jobs',
+    ADMIN_APPLICATIONS: '/dashboard/admin/applications',
     ADMIN_PLACEMENTS: '/dashboard/admin/placements',
     ADMIN_ANALYTICS: '/dashboard/admin/analytics',
-    ADMIN_SETTINGS: '/dashboard/admin/settings',
     ADMIN_REPORTS: '/dashboard/admin/reports',
+    ADMIN_AUDIT_LOGS: '/dashboard/admin/audit-logs',
+    ADMIN_SETTINGS: '/dashboard/admin/settings',
 
     // Student
     STUDENT_DASHBOARD: '/dashboard/student',
     STUDENT_PROFILE: '/dashboard/student/profile',
     STUDENT_JOBS: '/dashboard/student/jobs',
     STUDENT_APPLICATIONS: '/dashboard/student/applications',
+    STUDENT_ELIGIBILITY: '/dashboard/student/eligibility',
+    STUDENT_OFFERS: '/dashboard/student/offers',
     STUDENT_RESUME: '/dashboard/student/resume',
     STUDENT_COMPANIES: '/dashboard/student/companies',
 
@@ -99,7 +104,10 @@ export const ROUTE_PATHS = Object.freeze({
     RECRUITER_PROFILE: '/dashboard/recruiter/profile',
     RECRUITER_POST_JOB: '/dashboard/recruiter/post-job',
     RECRUITER_MY_JOBS: '/dashboard/recruiter/my-jobs',
+    RECRUITER_CANDIDATES: '/dashboard/recruiter/candidates',
     RECRUITER_APPLICANTS: '/dashboard/recruiter/applicants',
+    RECRUITER_INTERVIEWS: '/dashboard/recruiter/interviews',
+    RECRUITER_OFFERS: '/dashboard/recruiter/offers',
     RECRUITER_ANALYTICS: '/dashboard/recruiter/analytics',
 });
 

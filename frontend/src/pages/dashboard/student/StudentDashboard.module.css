@@ -1,0 +1,264 @@
+.dashboardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    animation: fadeIn var(--transition-slow) ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcomeSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
+    padding: var(--space-6) var(--space-8);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-primary-100);
+}
+
+.welcomeContent h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-secondary-900);
+    margin-bottom: var(--space-2);
+}
+
+.welcomeContent p {
+    color: var(--color-neutral-600);
+    font-size: var(--font-size-base);
+}
+
+.eligibilityBadge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-neutral-200);
+}
+
+.eligibilityBadge.eligible {
+    border-left: 4px solid var(--color-success-500);
+}
+
+.eligibilityBadge.pending {
+    border-left: 4px solid var(--color-warning-500);
+}
+
+.eligibilityBadge.not-eligible {
+    border-left: 4px solid var(--color-danger-500);
+}
+
+.eligibilityBadge h4 {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+    margin-bottom: var(--space-1);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.eligibilityBadge p {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-secondary-900);
+}
+
+.gridSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcomeSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+}
+
+.sectionHeader h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-secondary-900);
+}
+
+.viewAll {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-600);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.viewAll:hover {
+    text-decoration: underline;
+}
+
+/* Timeline specific styles */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    position: relative;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-neutral-200);
+}
+
+.timelineItem {
+    position: relative;
+    padding-left: var(--space-4);
+}
+
+.timelineItem::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--space-4) * -1 - 6px);
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary-500);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--color-primary-100);
+}
+
+.timelineHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-1);
+}
+
+.timelineTitle {
+    font-weight: 600;
+    color: var(--color-secondary-900);
+}
+
+.timelineTime {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+.timelineCompany {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+}
+
+/* Application List */
+.appList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.appItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.appItem:hover {
+    border-color: var(--color-primary-300);
+    background-color: var(--color-primary-50);
+}
+
+.appInfo h4 {
+    font-weight: 600;
+    color: var(--color-secondary-900);
+    margin-bottom: 2px;
+}
+
+.appInfo p {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+/* Profile Completion Card */
+.profileProgress {
+    height: 8px;
+    background-color: var(--color-neutral-200);
+    border-radius: var(--radius-full);
+    margin: var(--space-4) 0;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: var(--color-primary-500);
+    border-radius: var(--radius-full);
+}
+
+.progressText {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+}
+
+/* Quick Actions */
+.quickActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.actionBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    color: var(--color-secondary-900);
+    font-weight: 500;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.actionBtn svg {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary-600);
+}
+
+.actionBtn:hover {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-700);
+}

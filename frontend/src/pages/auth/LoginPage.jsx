@@ -1,70 +1,104 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginUser, selectAuthLoading, selectAuthError } from '../../features/auth/authSlice';
-import Input from '../../components/ui/Input/Input';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthInput from '../../features/auth/components/AuthInput';
 import Button from '../../components/ui/Button/Button';
+import './AuthPages.css';
 
 const LoginPage = () => {
-    const dispatch = useDispatch();
-    const loading = useSelector(selectAuthLoading);
-    const error = useSelector(selectAuthError);
-    const [form, setForm] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({ email: '', password: '', rememberMe: false });
+    const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [statusError, setStatusError] = useState(null);
 
     const handleChange = (e) => {
-        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        const { name, value, type, checked } = e.target;
+        setFormData({
+            ...formData,
+            [name]: type === 'checkbox' ? checked : value,
+        });
+        if (errors[name]) setErrors({ ...errors, [name]: '' });
     };
 
-    const handleSubmit = (e) => {
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.email) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Enter a valid email address';
+        if (!formData.password) newErrors.password = 'Password is required';
+        return newErrors;
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch(loginUser(form));
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+
+        setLoading(true);
+        setStatusError(null);
+
+        // Simulation of API request processing
+        setTimeout(() => {
+            setLoading(false);
+            // Simulate success/failure
+            if (formData.email === 'admin@placetrack.com' && formData.password === 'admin123') {
+                navigate('/dashboard', { replace: true });
+            } else {
+                setStatusError('Invalid credentials. Please try again.');
+            }
+        }, 1500);
     };
 
     return (
-        <div>
-            <h2 style={{ marginBottom: 'var(--space-2)', color: 'var(--color-neutral-900)' }}>
-                Welcome Back
-            </h2>
-            <p style={{ marginBottom: 'var(--space-8)', color: 'var(--color-neutral-500)' }}>
-                Sign in to your placement tracker account
-            </p>
+        <div className="auth-page">
+            <div className="auth-page__header">
+                <h2 className="auth-page__title">Welcome Back</h2>
+                <p className="auth-page__subtitle">Sign in to your PlaceTrack account</p>
+            </div>
 
-            {error && (
-                <div style={{
-                    padding: 'var(--space-3) var(--space-4)',
-                    backgroundColor: 'var(--color-danger-50)',
-                    color: 'var(--color-danger-600)',
-                    borderRadius: 'var(--radius-md)',
-                    fontSize: 'var(--text-sm)',
-                    marginBottom: 'var(--space-4)',
-                }}>
-                    {error}
+            {statusError && (
+                <div className="auth-page__status auth-page__status--error" role="alert">
+                    <span>⚠️</span>
+                    {statusError}
                 </div>
             )}
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
-                <Input
+            <form className="auth-page__form" onSubmit={handleSubmit} noValidate>
+                <AuthInput
                     label="Email Address"
                     type="email"
                     name="email"
-                    value={form.email}
+                    placeholder="Enter your email"
+                    value={formData.email}
                     onChange={handleChange}
-                    placeholder="you@example.com"
-                    required
+                    error={errors.email}
                 />
-                <Input
+
+                <AuthInput
                     label="Password"
                     type="password"
                     name="password"
-                    value={form.password}
-                    onChange={handleChange}
                     placeholder="Enter your password"
-                    required
+                    value={formData.password}
+                    onChange={handleChange}
+                    error={errors.password}
                 />
 
-                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Link to="/forgot-password" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-primary-600)' }}>
-                        Forgot password?
+                <div className="auth-page__options">
+                    <label className="auth-page__checkbox-group">
+                        <input
+                            type="checkbox"
+                            name="rememberMe"
+                            checked={formData.rememberMe}
+                            onChange={handleChange}
+                            className="auth-page__checkbox"
+                        />
+                        <span className="auth-page__checkbox-label">Remember me</span>
+                    </label>
+                    <Link to="/forgot-password" className="auth-page__link">
+                        Forgot Password?
                     </Link>
                 </div>
 
@@ -73,12 +107,18 @@ const LoginPage = () => {
                 </Button>
             </form>
 
-            <p style={{ textAlign: 'center', marginTop: 'var(--space-6)', fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
-                Don&apos;t have an account?{' '}
-                <Link to="/register" style={{ color: 'var(--color-primary-600)', fontWeight: 600 }}>
-                    Register
+            <div className="auth-page__divider">Or sign in with</div>
+
+            <Button type="button" variant="outline" size="md" fullWidth>
+                Continue with Google
+            </Button>
+
+            <div className="auth-page__footer">
+                Don't have an account?{' '}
+                <Link to="/register" className="auth-page__link">
+                    Create an account
                 </Link>
-            </p>
+            </div>
         </div>
     );
 };

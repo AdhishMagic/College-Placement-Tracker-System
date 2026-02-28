@@ -2,12 +2,28 @@ import { createSlice } from '@reduxjs/toolkit';
 
 /**
  * UI Slice
- * Manages global UI state: sidebar, theme, modals, toasts.
+ * Manages global UI state: sidebar, theme, modals, toasts, page metadata.
  */
+
+/* Persist theme preference from localStorage if available */
+const getInitialTheme = () => {
+    try {
+        const stored = localStorage.getItem('cpts_theme');
+        if (stored === 'dark' || stored === 'light') return stored;
+    } catch {
+        /* ignore */
+    }
+    /* Respect system preference as fallback */
+    if (typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+    }
+    return 'light';
+};
+
 const initialState = {
-    sidebarOpen: true,
-    sidebarCollapsed: false,
-    theme: 'light', // 'light' | 'dark'
+    sidebarOpen: true,       // Mobile: drawer open/closed
+    sidebarCollapsed: false, // Desktop: expanded/collapsed
+    theme: getInitialTheme(),
     activeModal: null,
     modalData: null,
     toasts: [],
@@ -28,8 +44,24 @@ const uiSlice = createSlice({
         toggleSidebarCollapse: (state) => {
             state.sidebarCollapsed = !state.sidebarCollapsed;
         },
+        setSidebarCollapsed: (state, action) => {
+            state.sidebarCollapsed = action.payload;
+        },
         setTheme: (state, action) => {
             state.theme = action.payload;
+            try {
+                localStorage.setItem('cpts_theme', action.payload);
+            } catch {
+                /* ignore */
+            }
+        },
+        toggleTheme: (state) => {
+            state.theme = state.theme === 'light' ? 'dark' : 'light';
+            try {
+                localStorage.setItem('cpts_theme', state.theme);
+            } catch {
+                /* ignore */
+            }
         },
         openModal: (state, action) => {
             state.activeModal = action.payload.modal;
@@ -63,7 +95,9 @@ export const {
     toggleSidebar,
     setSidebarOpen,
     toggleSidebarCollapse,
+    setSidebarCollapsed,
     setTheme,
+    toggleTheme,
     openModal,
     closeModal,
     addToast,

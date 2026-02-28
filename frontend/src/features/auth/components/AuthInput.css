@@ -1,0 +1,88 @@
+/* ============================================
+   AUTH INPUT — Clean, Professional Form Design
+   ============================================ */
+
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-5);
+    width: 100%;
+}
+
+.auth-input-group__label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.auth-input-group__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    background-color: var(--surface-primary);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.auth-input-group__wrapper:focus-within {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(74, 138, 212, 0.15);
+}
+
+.auth-input-group__wrapper--error,
+.auth-input-group__wrapper--error:focus-within {
+    border-color: var(--color-danger-500);
+    box-shadow: 0 0 0 3px rgba(225, 65, 77, 0.15);
+}
+
+.auth-input-group__input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    outline: none;
+    font-family: inherit;
+}
+
+.auth-input-group__input::placeholder {
+    color: var(--text-tertiary);
+}
+
+.auth-input-group__input:disabled {
+    color: var(--text-tertiary);
+    cursor: not-allowed;
+    background-color: var(--color-neutral-50);
+}
+
+.auth-input-group__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-3);
+    background: transparent;
+    border: none;
+    color: var(--icon-secondary);
+    cursor: pointer;
+    font-size: var(--text-lg);
+    transition: color var(--transition-fast);
+}
+
+.auth-input-group__toggle:hover {
+    color: var(--icon-primary);
+}
+
+.auth-input-group__error {
+    font-size: var(--text-xs);
+    color: var(--color-danger-500);
+    margin-top: var(--space-2);
+}
+
+.auth-input-group__helper {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    margin-top: var(--space-2);
+}
