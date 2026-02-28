@@ -1,0 +1,301 @@
+.dashboardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    animation: fadeIn var(--transition-slow) ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 1. Company Overview Header */
+.welcomeSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, white 100%);
+    padding: var(--space-6) var(--space-8);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-primary-100);
+}
+
+.welcomeContent h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-secondary-900);
+    margin-bottom: var(--space-2);
+}
+
+.welcomeContent p {
+    color: var(--color-neutral-600);
+    font-size: var(--font-size-base);
+}
+
+.companyBadge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-neutral-200);
+}
+
+.companyLogo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-600);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.companyInfo h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-secondary-900);
+    margin-bottom: var(--space-1);
+}
+
+.companyInfo p {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+/* Metrics Grid / StatCards */
+.gridSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Main Two-Column Layout */
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcomeSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+}
+
+/* Common Section Header */
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+}
+
+.sectionHeader h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-secondary-900);
+}
+
+.viewAll {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-600);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.viewAll:hover {
+    text-decoration: underline;
+}
+
+/* Pipeline Overview */
+.pipelineDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: space-between;
+}
+
+.pipelineStage {
+    flex: 1;
+    min-width: 100px;
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.pipelineStage h4 {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+    font-weight: 500;
+}
+
+.pipelineStage p {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-secondary-900);
+}
+
+/* Application List / Feeds */
+.appList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.appItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.appItem:hover {
+    border-color: var(--color-primary-300);
+    background-color: var(--color-primary-50);
+}
+
+.appInfo h4 {
+    font-weight: 600;
+    color: var(--color-secondary-900);
+    margin-bottom: 2px;
+}
+
+.appInfo p {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+.candidateActions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.iconBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    color: var(--color-neutral-400);
+    transition: var(--transition-fast);
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+}
+
+.iconBtn:hover {
+    color: var(--color-primary-600);
+    background-color: var(--color-primary-100);
+}
+
+/* Quick Actions */
+.quickActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.actionBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    color: var(--color-secondary-900);
+    font-weight: 500;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.actionBtn svg {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary-600);
+}
+
+.actionBtn:hover {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-700);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Job Performance */
+.jobPerformanceList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.jobItem {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    transition: var(--transition-base);
+}
+
+.jobItem:hover {
+    border-color: var(--color-neutral-300);
+    box-shadow: var(--shadow-sm);
+}
+
+.jobHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+}
+
+.jobHeader h4 {
+    font-weight: 600;
+    color: var(--color-secondary-900);
+}
+
+.jobStats {
+    display: flex;
+    gap: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+}
+
+.jobStat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.jobStat svg {
+    color: var(--color-primary-500);
+}
