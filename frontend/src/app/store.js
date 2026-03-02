@@ -11,6 +11,7 @@ import uiReducer from '../features/ui/uiSlice';
 import studentProfileReducer from '../features/studentProfile/studentProfileSlice';
 import documentUploadReducer from '../features/resume/documentUploadSlice';
 import eligibilityReducer from '../features/eligibility/eligibilitySlice';
+import applicationsReducer from '../features/applications/applicationsSlice';
 
 /**
  * Redux Store Configuration
@@ -42,6 +43,7 @@ const store = configureStore({
         ui: uiReducer,
         documentUpload: documentUploadReducer,
         eligibility: eligibilityReducer,
+        applications: applicationsReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

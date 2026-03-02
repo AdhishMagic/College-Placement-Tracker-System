@@ -1,0 +1,99 @@
+/* ============================================
+   ApplicationPagination
+   ============================================ */
+
+.app-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border-primary);
+}
+
+.app-pagination__info {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.app-pagination__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.app-pagination__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 6px 14px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.app-pagination__btn:hover:not(:disabled) {
+    background: var(--surface-tertiary);
+    border-color: var(--border-secondary);
+}
+
+.app-pagination__btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.app-pagination__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.app-pagination__pages {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.app-pagination__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.app-pagination__num:hover:not(.app-pagination__num--active) {
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+}
+
+.app-pagination__num--active {
+    background: var(--color-primary-500);
+    color: var(--color-white);
+    font-weight: var(--font-bold);
+    pointer-events: none;
+}
+
+@media (max-width: 576px) {
+    .app-pagination {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .app-pagination__controls {
+        justify-content: space-between;
+    }
+
+    .app-pagination__pages {
+        display: none;
+        /* Hide numbers on mobile */
+    }
+}

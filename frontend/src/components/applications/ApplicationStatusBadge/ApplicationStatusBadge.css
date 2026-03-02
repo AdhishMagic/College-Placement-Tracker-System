@@ -1,0 +1,116 @@
+/* ============================================
+   ApplicationStatusBadge — Color-coded pill
+   ============================================ */
+
+.app-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    line-height: 1;
+    letter-spacing: var(--tracking-wide);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* ── Sizes ── */
+.app-status-badge--sm {
+    font-size: var(--text-xs);
+    padding: 3px 10px;
+}
+
+.app-status-badge--md {
+    font-size: var(--text-xs);
+    padding: 5px 12px;
+}
+
+.app-status-badge--lg {
+    font-size: var(--text-sm);
+    padding: 6px 14px;
+}
+
+/* ── Dot indicator ── */
+.app-status-badge__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+/* ── Blue: Applied ── */
+.badge--applied {
+    background-color: var(--color-info-100);
+    color: var(--color-info-600);
+}
+
+.badge--applied .app-status-badge__dot {
+    background-color: var(--color-info-500);
+}
+
+/* ── Amber: Shortlisted ── */
+.badge--shortlisted {
+    background-color: var(--color-warning-100);
+    color: var(--color-warning-600);
+}
+
+.badge--shortlisted .app-status-badge__dot {
+    background-color: var(--color-warning-500);
+}
+
+/* ── Purple: Interview Scheduled ── */
+.badge--interview {
+    background-color: #EDE9FE;
+    color: #6D28D9;
+}
+
+.badge--interview .app-status-badge__dot {
+    background-color: #7C3AED;
+}
+
+/* ── Green: Offer Received ── */
+.badge--offer {
+    background-color: var(--color-success-100);
+    color: var(--color-success-600);
+}
+
+.badge--offer .app-status-badge__dot {
+    background-color: var(--color-success-500);
+}
+
+/* ── Red: Rejected ── */
+.badge--rejected {
+    background-color: var(--color-danger-100);
+    color: var(--color-danger-600);
+}
+
+.badge--rejected .app-status-badge__dot {
+    background-color: var(--color-danger-500);
+}
+
+/* ── Dark Theme ── */
+[data-theme='dark'] .badge--applied {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #93BBFD;
+}
+
+[data-theme='dark'] .badge--shortlisted {
+    background-color: rgba(232, 156, 10, 0.15);
+    color: #F5C542;
+}
+
+[data-theme='dark'] .badge--interview {
+    background-color: rgba(124, 58, 237, 0.15);
+    color: #C4B5FD;
+}
+
+[data-theme='dark'] .badge--offer {
+    background-color: rgba(30, 163, 94, 0.15);
+    color: #6EE7A0;
+}
+
+[data-theme='dark'] .badge--rejected {
+    background-color: rgba(225, 65, 77, 0.15);
+    color: #FCA5AB;
+}

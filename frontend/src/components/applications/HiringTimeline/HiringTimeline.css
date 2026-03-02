@@ -1,0 +1,149 @@
+/* ============================================
+   HiringTimeline — Vertical Step Indicator
+   ============================================ */
+
+.hiring-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: var(--space-1);
+}
+
+/* ── Step row ── */
+.hiring-timeline__step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    position: relative;
+    padding-bottom: var(--space-5);
+}
+
+.hiring-timeline__step:last-child {
+    padding-bottom: 0;
+}
+
+/* ── Connector line ── */
+.hiring-timeline__connector {
+    position: absolute;
+    left: 15px;
+    top: -2px;
+    width: 2px;
+    height: calc(100%);
+    background: var(--border-secondary);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.hiring-timeline__connector--filled {
+    background: var(--color-primary-400);
+}
+
+.hiring-timeline__connector--rejected {
+    background: var(--color-danger-500);
+}
+
+/* ── Node circle ── */
+.hiring-timeline__node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    border: 2px solid var(--border-secondary);
+    background: var(--surface-elevated);
+    color: var(--text-tertiary);
+    transition: all var(--transition-base);
+}
+
+/* ── Completed ── */
+.hiring-timeline__step--completed .hiring-timeline__node {
+    background: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+    color: var(--color-white);
+}
+
+/* ── Active ── */
+.hiring-timeline__step--active .hiring-timeline__node {
+    border-color: var(--color-primary-500);
+    color: var(--color-primary-500);
+    box-shadow: 0 0 0 4px rgba(33, 102, 179, 0.15);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Rejected ── */
+.hiring-timeline__step--rejected .hiring-timeline__node {
+    background: var(--color-danger-500);
+    border-color: var(--color-danger-500);
+    color: var(--color-white);
+    box-shadow: 0 0 0 4px rgba(225, 65, 77, 0.12);
+}
+
+/* ── Pending ── */
+.hiring-timeline__step--pending .hiring-timeline__node {
+    border-style: dashed;
+    opacity: 0.55;
+}
+
+/* ── Step number fallback ── */
+.hiring-timeline__step-num {
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+}
+
+/* ── Label ── */
+.hiring-timeline__label-wrap {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+    min-width: 0;
+}
+
+.hiring-timeline__label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+}
+
+.hiring-timeline__step--pending .hiring-timeline__label {
+    color: var(--text-tertiary);
+}
+
+.hiring-timeline__step--rejected .hiring-timeline__label {
+    color: var(--color-danger-600);
+    font-weight: var(--font-semibold);
+}
+
+.hiring-timeline__date {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    margin-top: 2px;
+}
+
+/* ── Compact mode (inside modal) ── */
+.hiring-timeline--compact .hiring-timeline__step {
+    padding-bottom: var(--space-4);
+}
+
+.hiring-timeline--compact .hiring-timeline__node {
+    width: 26px;
+    height: 26px;
+}
+
+.hiring-timeline--compact .hiring-timeline__node svg {
+    width: 13px;
+    height: 13px;
+}
+
+.hiring-timeline--compact .hiring-timeline__connector {
+    left: 13px;
+}
+
+.hiring-timeline--compact .hiring-timeline__label {
+    font-size: var(--text-xs);
+}

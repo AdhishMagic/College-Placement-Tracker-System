@@ -1,0 +1,121 @@
+/* ============================================
+   ApplicationFilterBar — Search + Dropdowns
+   ============================================ */
+
+.app-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.05s;
+    opacity: 0;
+}
+
+/* ── Search field ── */
+.app-filter-bar__search {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.app-filter-bar__search-icon {
+    position: absolute;
+    left: 14px;
+    display: flex;
+    color: var(--icon-secondary);
+    pointer-events: none;
+}
+
+.app-filter-bar__search-input {
+    width: 100%;
+    padding: 10px 36px 10px 40px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.app-filter-bar__search-input::placeholder {
+    color: var(--text-tertiary);
+}
+
+.app-filter-bar__search-input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(74, 138, 212, 0.12);
+}
+
+.app-filter-bar__search-clear {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    background: var(--surface-tertiary);
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.app-filter-bar__search-clear:hover {
+    background: var(--color-danger-100);
+    color: var(--color-danger-600);
+}
+
+/* ── Select wrapper ── */
+.app-filter-bar__select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.app-filter-bar__select-icon {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    color: var(--icon-secondary);
+    pointer-events: none;
+}
+
+.app-filter-bar__select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px 36px 10px 36px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-family: var(--font-family-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+    min-width: 160px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.app-filter-bar__select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(74, 138, 212, 0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .app-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .app-filter-bar__select {
+        min-width: 100%;
+    }
+}
