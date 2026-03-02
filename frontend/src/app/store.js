@@ -13,6 +13,7 @@ import documentUploadReducer from '../features/resume/documentUploadSlice';
 import eligibilityReducer from '../features/eligibility/eligibilitySlice';
 import applicationsReducer from '../features/applications/applicationsSlice';
 import companyProfileReducer from '../features/companyProfile/companyProfileSlice';
+import shortlistReducer from '../features/shortlist/shortlistSlice';
 
 /**
  * Redux Store Configuration
@@ -46,6 +47,7 @@ const store = configureStore({
         eligibility: eligibilityReducer,
         applications: applicationsReducer,
         companyProfile: companyProfileReducer,
+        shortlist: shortlistReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

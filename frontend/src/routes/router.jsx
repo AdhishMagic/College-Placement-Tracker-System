@@ -47,6 +47,7 @@ const RecruiterProfile = lazy(() => import('../pages/dashboard/recruiter/Recruit
 const RecruiterPostJob = lazy(() => import('../pages/dashboard/recruiter/RecruiterPostJob'));
 const RecruiterMyJobs = lazy(() => import('../pages/dashboard/recruiter/RecruiterMyJobs'));
 const RecruiterApplicants = lazy(() => import('../pages/dashboard/recruiter/RecruiterApplicants'));
+const RecruiterShortlist = lazy(() => import('../pages/recruiter/CandidateShortlist/CandidateShortlist'));
 
 /**
  * Suspense wrapper for lazy-loaded pages.
@@ -336,6 +337,16 @@ const router = createBrowserRouter([
                             <RoleRoute allowedRoles={[ROLES.RECRUITER]}>
                                 <SuspenseWrapper>
                                     <RecruiterApplicants />
+                                </SuspenseWrapper>
+                            </RoleRoute>
+                        ),
+                    },
+                    {
+                        path: 'recruiter/shortlist',
+                        element: (
+                            <RoleRoute allowedRoles={[ROLES.RECRUITER]}>
+                                <SuspenseWrapper>
+                                    <RecruiterShortlist />
                                 </SuspenseWrapper>
                             </RoleRoute>
                         ),
