@@ -1,0 +1,282 @@
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-12);
+}
+
+.errorState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-12);
+    text-align: center;
+    height: 400px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.errorIcon {
+    font-size: 48px;
+    color: var(--color-danger);
+    margin-bottom: var(--spacing-4);
+}
+
+.errorState h3 {
+    margin-bottom: var(--spacing-2);
+    color: var(--color-neutral-900);
+}
+
+.errorState p {
+    color: var(--color-neutral-500);
+    margin-bottom: var(--spacing-6);
+}
+
+.successToast {
+    position: fixed;
+    top: var(--spacing-8);
+    right: var(--spacing-8);
+    background-color: var(--color-success);
+    color: white;
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+}
+
+/* Header Section */
+.profileHeader {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6) var(--spacing-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.headerLeft {
+    display: flex;
+    gap: var(--spacing-6);
+    align-items: center;
+}
+
+.logoContainer {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--color-neutral-100);
+    border: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logoFallback {
+    font-size: 40px;
+    color: var(--color-neutral-400);
+}
+
+.logoEdit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: var(--spacing-2) 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition-fast);
+}
+
+.logoEdit:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logoEdit input {
+    display: none;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.companyName {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-neutral-900);
+    margin: 0;
+}
+
+.companyMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    color: var(--color-neutral-500);
+    font-size: 15px;
+}
+
+.metaDivider {
+    color: var(--color-neutral-300);
+}
+
+.companyLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.companyLink:hover {
+    text-decoration: underline;
+}
+
+.headerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Action Bar */
+.actionBar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actionGroup {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+/* Form Fields Grid */
+.fieldGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-5);
+}
+
+.fullSpan {
+    grid-column: 1 / -1;
+}
+
+/* Skills/Tags */
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.skillCategory {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.skillLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-neutral-800);
+    margin: 0;
+}
+
+.skillIcon {
+    color: var(--color-primary);
+}
+
+.skillDivider {
+    height: 1px;
+    background-color: var(--border-light);
+}
+
+.stickyBar {
+    position: fixed;
+    bottom: var(--spacing-6);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    min-width: 400px;
+    justify-content: center;
+}
+
+.stickyContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.stickyLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-warning-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.stickyActions {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+@media (max-width: 768px) {
+    .profileHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-6);
+    }
+
+    .headerLeft {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .headerRight {
+        align-items: flex-start;
+    }
+
+    .fieldGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stickyBar {
+        width: 90%;
+        min-width: auto;
+    }
+}
