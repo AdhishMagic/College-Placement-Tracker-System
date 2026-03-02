@@ -14,6 +14,7 @@ import eligibilityReducer from '../features/eligibility/eligibilitySlice';
 import applicationsReducer from '../features/applications/applicationsSlice';
 import companyProfileReducer from '../features/companyProfile/companyProfileSlice';
 import shortlistReducer from '../features/shortlist/shortlistSlice';
+import settingsReducer from '../features/settings/settingsSlice';
 
 /**
  * Redux Store Configuration
@@ -48,6 +49,7 @@ const store = configureStore({
         applications: applicationsReducer,
         companyProfile: companyProfileReducer,
         shortlist: shortlistReducer,
+        settings: settingsReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
