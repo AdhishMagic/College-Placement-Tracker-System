@@ -1,0 +1,121 @@
+.analytics-controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    /* responsive */
+}
+
+.analytics-filters {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    min-width: 160px;
+    transition: border-color 0.2s;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    border-color: var(--primary-main);
+}
+
+.date-range-group {
+    flex-direction: column;
+}
+
+.date-input {
+    min-width: 140px;
+}
+
+.date-separator {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 0 0.5rem;
+    align-self: center;
+}
+
+.analytics-exports {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    border: none;
+}
+
+.export-btn:active {
+    transform: scale(0.98);
+}
+
+.export-btn.btn-primary {
+    background-color: var(--primary-main);
+    color: white;
+}
+
+.export-btn.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.export-btn.btn-secondary {
+    background-color: var(--bg-surface-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.export-btn.btn-secondary:hover {
+    background-color: var(--neutral-100);
+}
+
+/* Responsive adjust */
+@media (max-width: 992px) {
+    .analytics-controls-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .analytics-exports {
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+}

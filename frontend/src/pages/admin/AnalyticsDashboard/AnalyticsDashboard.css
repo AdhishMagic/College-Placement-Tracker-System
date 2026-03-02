@@ -1,0 +1,125 @@
+.analytics-page {
+    padding: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--bg-default);
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.page-header h1 {
+    font-size: 1.875rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.5px;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.third-grid {
+    grid-template-columns: 1fr 2fr;
+}
+
+.table-section {
+    margin-bottom: 2rem;
+}
+
+/* Legend in Chart Header */
+.chart-legend-simple {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.blue {
+    background-color: var(--primary-main);
+}
+
+.dot.gray {
+    background-color: var(--text-muted);
+}
+
+/* Skeletons */
+.kpi-skeleton,
+.chart-skeleton {
+    background: linear-gradient(90deg, var(--bg-surface) 25%, var(--border-color) 50%, var(--bg-surface) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.kpi-skeleton {
+    height: 140px;
+}
+
+.chart-skeleton {
+    height: 380px;
+}
+
+@media (max-width: 1280px) {
+    .kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .chart-grid,
+    .third-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .analytics-page {
+        padding: 1rem;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}
