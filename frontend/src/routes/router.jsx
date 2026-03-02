@@ -39,6 +39,7 @@ const StudentProfile = lazy(() => import('../pages/dashboard/student/StudentProf
 const StudentJobs = lazy(() => import('../pages/dashboard/student/StudentJobs'));
 const StudentApplications = lazy(() => import('../pages/dashboard/student/StudentApplications'));
 const StudentResume = lazy(() => import('../pages/dashboard/student/StudentResume'));
+const StudentEligibility = lazy(() => import('../pages/student/EligibilityPage'));
 
 // Recruiter Dashboard
 const RecruiterDashboard = lazy(() => import('../pages/dashboard/recruiter/RecruiterDashboard'));
@@ -273,6 +274,16 @@ const router = createBrowserRouter([
                             <RoleRoute allowedRoles={[ROLES.STUDENT]}>
                                 <SuspenseWrapper>
                                     <StudentResume />
+                                </SuspenseWrapper>
+                            </RoleRoute>
+                        ),
+                    },
+                    {
+                        path: 'student/eligibility',
+                        element: (
+                            <RoleRoute allowedRoles={[ROLES.STUDENT]}>
+                                <SuspenseWrapper>
+                                    <StudentEligibility />
                                 </SuspenseWrapper>
                             </RoleRoute>
                         ),

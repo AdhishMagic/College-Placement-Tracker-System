@@ -1,0 +1,67 @@
+/* ============================================
+   ELIGIBILITY EMPTY STATE
+   Centered illustration with message
+   ============================================ */
+
+.eligibility-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-16) var(--space-6);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.eligibility-empty__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-full);
+    background: var(--surface-tertiary);
+    color: var(--icon-secondary);
+    margin-bottom: var(--space-6);
+    transition: transform var(--transition-slow);
+}
+
+.eligibility-empty__icon:hover {
+    transform: scale(1.05);
+}
+
+.eligibility-empty__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.eligibility-empty__description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    max-width: 420px;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.eligibility-empty__clear-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary-600);
+    background: var(--color-primary-50);
+    border: 1px solid var(--color-primary-100);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.eligibility-empty__clear-btn:hover {
+    background: var(--color-primary-100);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}

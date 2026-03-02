@@ -10,6 +10,7 @@ import notificationsReducer from '../features/notifications/notificationsSlice';
 import uiReducer from '../features/ui/uiSlice';
 import studentProfileReducer from '../features/studentProfile/studentProfileSlice';
 import documentUploadReducer from '../features/resume/documentUploadSlice';
+import eligibilityReducer from '../features/eligibility/eligibilitySlice';
 
 /**
  * Redux Store Configuration
@@ -25,6 +26,7 @@ import documentUploadReducer from '../features/resume/documentUploadSlice';
  *  - analytics        → dashboard analytics data
  *  - notifications    → in-app notifications
  *  - ui               → sidebar state, theme, modals, toasts
+ *  - eligibility      → student eligibility status, filtering
  */
 const store = configureStore({
     reducer: {
@@ -39,6 +41,7 @@ const store = configureStore({
         notifications: notificationsReducer,
         ui: uiReducer,
         documentUpload: documentUploadReducer,
+        eligibility: eligibilityReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

@@ -1,0 +1,131 @@
+/* ============================================
+   PAGINATION — Clean Academic Navigation
+   ============================================ */
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6) 0;
+    margin-top: var(--space-4);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.pagination__info {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
+.pagination__info strong {
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+}
+
+.pagination__total {
+    color: var(--text-tertiary);
+}
+
+.pagination__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* ── Prev / Next Buttons ── */
+.pagination__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination__btn:hover:not(:disabled) {
+    color: var(--color-primary-600);
+    border-color: var(--color-primary-300);
+    background: var(--color-primary-50);
+}
+
+.pagination__btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ── Page Numbers ── */
+.pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.pagination__page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination__page-btn:hover {
+    background: var(--surface-tertiary);
+    color: var(--text-primary);
+}
+
+.pagination__page-btn--active {
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-500));
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(26, 82, 145, 0.25);
+    font-weight: var(--font-semibold);
+}
+
+.pagination__page-btn--active:hover {
+    background: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-600));
+    color: var(--color-white);
+}
+
+.pagination__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    letter-spacing: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .pagination__controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pagination__btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    .pagination__page-btn {
+        width: 32px;
+        height: 32px;
+        font-size: var(--text-xs);
+    }
+}
