@@ -1,0 +1,169 @@
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.actionPanel,
+.previewCard {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+.panelTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btnPublish,
+.btnDraft {
+    width: 100%;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnPublish {
+    background: #2563eb;
+    color: white;
+}
+
+.btnPublish:hover:not(:disabled) {
+    background: #1d4ed8;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btnDraft {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.btnDraft:hover:not(:disabled) {
+    background: #e2e8f0;
+}
+
+.btnPublish:disabled,
+.btnDraft:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Preview Card specific styles */
+.previewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.previewTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.previewBadge {
+    font-size: 0.75rem;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.cardContent {
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #f8fafc;
+}
+
+.jobHeader {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.companyLogoPlaceholder {
+    width: 40px;
+    height: 40px;
+    background: #e2e8f0;
+    color: #64748b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.jobTitle {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    word-break: break-all;
+}
+
+.companyName {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagIcon {
+    font-size: 0.75rem;
+    color: #475569;
+    background: #e2e8f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 1rem 0;
+}
+
+.eligibilitySummary p {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.875rem;
+    color: #334155;
+    word-break: break-all;
+}
+
+.deadlineInfo {
+    margin: 1rem 0 0 0;
+    font-size: 0.875rem;
+    color: #ef4444;
+    font-weight: 500;
+}

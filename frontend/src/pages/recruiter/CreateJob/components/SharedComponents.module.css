@@ -1,0 +1,170 @@
+/* PageHeader Styles */
+.pageHeader {
+    margin-bottom: 2rem;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.crumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chevron {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+}
+
+.pageTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* SectionCard Styles */
+.sectionCard {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.cardHeader {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.numberBadge {
+    background: #e0e7ff;
+    color: #4f46e5;
+    font-weight: 600;
+    font-size: 0.875rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.cardSubtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+    padding-left: 2.25rem;
+}
+
+.cardBody {
+    padding: 1.5rem;
+}
+
+/* Reusable Form Styles to be imported where needed */
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #1e293b;
+    transition: all 0.2s;
+    background: #f8fafc;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #1e293b;
+    transition: all 0.2s;
+    background: #f8fafc;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #1e293b;
+    transition: all 0.2s;
+    background: #f8fafc;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}

@@ -1,0 +1,100 @@
+.stagesBuilder {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stagesList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stageRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+.stageRow:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.stageOrderBadge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stageInputWrapper {
+    flex-grow: 1;
+}
+
+.stageInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #1e293b;
+    transition: all 0.2s;
+}
+
+.stageInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btnDanger {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btnDanger:hover:not(:disabled) {
+    background: #fee2e2;
+}
+
+.btnDanger:disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.addStageBtn {
+    align-self: flex-start;
+    background: white;
+    color: #3b82f6;
+    border: 1px dashed #3b82f6;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.addStageBtn:hover {
+    background: #eff6ff;
+}
