@@ -1,0 +1,156 @@
+/* ============================================
+   TAG INPUT COMPONENT — Skills & Technologies
+   ============================================ */
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    line-height: 1.6;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+/* ---- Tag Variants ---- */
+.tag.primary {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+    border: 1px solid var(--color-primary-100);
+}
+
+.tag.secondary {
+    background-color: var(--color-info-50);
+    color: var(--color-info-600);
+    border: 1px solid var(--color-info-100);
+}
+
+.tag.outline {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-secondary);
+}
+
+/* ---- Removable Tag ---- */
+.tag.removable {
+    padding-right: var(--space-1);
+}
+
+.tag.removable:hover {
+    filter: brightness(0.95);
+}
+
+.removeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.6;
+    transition: all var(--transition-fast);
+    padding: 0;
+    font-size: 12px;
+}
+
+.removeBtn:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Edit Mode Container ---- */
+.tagInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.tagInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--surface-secondary);
+    border: 1.5px solid var(--border-secondary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    min-height: 44px;
+}
+
+.tagInputWrapper.focused {
+    border-color: var(--color-primary-500);
+    background-color: var(--surface-primary);
+    box-shadow: 0 0 0 3px rgba(33, 102, 179, 0.1);
+}
+
+.tagsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    flex: 1;
+    align-items: center;
+}
+
+.tagTextInput {
+    flex: 1;
+    min-width: 120px;
+    padding: var(--space-1) 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: var(--text-sm);
+    font-family: var(--font-family-primary);
+    color: var(--text-primary);
+}
+
+.tagTextInput::placeholder {
+    color: var(--text-tertiary);
+}
+
+.addBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary-500);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    font-size: 14px;
+    padding: 0;
+}
+
+.addBtn:hover {
+    background-color: var(--color-primary-600);
+    transform: scale(1.05);
+}
+
+.hint {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    padding-left: var(--space-1);
+}
+
+/* ---- Empty ---- */
+.emptyTag {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    font-style: italic;
+}

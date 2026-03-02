@@ -1,0 +1,96 @@
+/* ============================================
+   UPLOAD PROGRESS — Edway Academic Design
+   ============================================ */
+
+.container {
+    padding: var(--space-6);
+    background: var(--surface-elevated);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-primary-100);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+}
+
+.fileInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 0;
+}
+
+.fileIcon {
+    color: var(--color-primary-500);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+}
+
+.fileName {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.percentage {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-600);
+    flex-shrink: 0;
+    margin-left: var(--space-3);
+}
+
+/* ---- Progress Bar ---- */
+.trackWrapper {
+    margin-bottom: var(--space-3);
+}
+
+.track {
+    width: 100%;
+    height: 8px;
+    background: var(--surface-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-400));
+    border-radius: var(--radius-full);
+    position: relative;
+}
+
+.fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ---- Status Text ---- */
+.statusText {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    font-weight: var(--font-medium);
+}

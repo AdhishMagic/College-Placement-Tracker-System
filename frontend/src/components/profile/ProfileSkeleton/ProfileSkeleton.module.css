@@ -1,0 +1,187 @@
+/* ============================================
+   PROFILE SKELETON — Loading State
+   ============================================ */
+
+.skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ---- Shared Shimmer Bar ---- */
+.bar {
+    border-radius: var(--radius-md);
+    background: linear-gradient(90deg,
+            var(--surface-tertiary) 25%,
+            var(--border-primary) 37%,
+            var(--surface-tertiary) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+}
+
+.barXs {
+    height: 12px;
+    width: 60px;
+}
+
+.barSm {
+    height: 14px;
+    width: 120px;
+}
+
+.barMd {
+    height: 16px;
+    width: 180px;
+}
+
+.barLg {
+    height: 24px;
+    width: 220px;
+}
+
+/* ---- Header ---- */
+.headerCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-8);
+    background: var(--surface-elevated);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+}
+
+.avatarSkeleton {
+    width: 88px;
+    height: 88px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    background: linear-gradient(90deg,
+            var(--surface-tertiary) 25%,
+            var(--border-primary) 37%,
+            var(--surface-tertiary) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.progressSkeleton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.circleSkeleton {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,
+            var(--surface-tertiary) 25%,
+            var(--border-primary) 37%,
+            var(--surface-tertiary) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+}
+
+/* ---- Section ---- */
+.sectionSkeleton {
+    background: var(--surface-elevated);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-6);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.iconSkeleton {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(90deg,
+            var(--surface-tertiary) 25%,
+            var(--border-primary) 37%,
+            var(--surface-tertiary) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+    flex-shrink: 0;
+}
+
+.sectionBody {
+    padding: var(--space-6);
+}
+
+.fieldGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+.fieldSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+/* ---- Tags ---- */
+.tagRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.tagSkeleton {
+    width: 80px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg,
+            var(--surface-tertiary) 25%,
+            var(--border-primary) 37%,
+            var(--surface-tertiary) 63%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .headerCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fieldGrid {
+        grid-template-columns: 1fr;
+    }
+}

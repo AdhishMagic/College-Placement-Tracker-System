@@ -1,0 +1,115 @@
+/* ============================================
+   DELETE CONFIRM MODAL — Edway Academic Design
+   ============================================ */
+
+.portal {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+}
+
+/* ---- Overlay ---- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--surface-overlay);
+    backdrop-filter: blur(4px);
+}
+
+/* ---- Modal Card ---- */
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: var(--space-8);
+    background: var(--surface-elevated);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-2xl);
+    text-align: center;
+    z-index: 1;
+}
+
+/* ---- Close Button ---- */
+.closeBtn {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    color: var(--text-tertiary);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.closeBtn:hover {
+    background: var(--surface-tertiary);
+    color: var(--text-primary);
+}
+
+/* ---- Warning Icon ---- */
+.iconWrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-danger-100), var(--color-danger-50));
+    color: var(--color-danger-500);
+    font-size: var(--text-2xl);
+    margin: 0 auto var(--space-5);
+}
+
+/* ---- Title ---- */
+.title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+/* ---- Description ---- */
+.description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.description strong {
+    color: var(--text-primary);
+    font-weight: var(--font-semibold);
+}
+
+/* ---- Actions ---- */
+.actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+}
+
+.actions button {
+    flex: 1;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+    .modal {
+        padding: var(--space-6);
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+}
